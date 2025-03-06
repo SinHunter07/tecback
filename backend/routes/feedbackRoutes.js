@@ -1,7 +1,33 @@
 const express = require('express');
 const Feedback = require('../models/Feedback');
 const VisitCount = require('../models/VisitCount');
+const Form = require('../models/Form.js')
 const router = express.Router();
+
+
+//create Form
+
+router.post('/form' , async (req , res) => {
+    try {
+        const form = new Form(req.body);
+        await form.save();
+        res.status(201).json(feedback);
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+
+})
+
+router.get('/userform' , async (req ,res) => {
+    try {
+        const form = await Form.find()
+        res.json(form)
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+        
+    }
+    
+})
 
 // Create Feedback
 router.post('/feedback', async (req, res) => {
