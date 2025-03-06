@@ -5,7 +5,7 @@ const formSchema = new mongoose.Schema({
     email: { type: String, required: true },
     erpNum: {type: Number ,required:true, unique : true},
     year:{type:Number , required:true},
-    Couse:{type:String , required:true},
+    Course:{type:String , required:true},
     phoneNumber: { type: Number, required: true },
     googleDrive:{type : String , required:true},
     position:{type:String , required:true},

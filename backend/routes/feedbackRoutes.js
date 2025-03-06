@@ -11,7 +11,7 @@ router.post('/form' , async (req , res) => {
     try {
         const form = new Form(req.body);
         await form.save();
-        res.status(201).json(feedback);
+        res.status(201).json(form);
     } catch (error) {
         res.status(400).json({message: error.message})
     }
