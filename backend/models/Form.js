@@ -6,6 +6,7 @@ const formSchema = new mongoose.Schema({
     erpNum: {type: Number ,required:true, unique : true},
     year:{type:Number , required:true},
     Course:{type:String , required:true},
+    College:{type:String , required:true},
     phoneNumber: { type: Number, required: true },
     googleDrive:{type : String , required:true},
     position:{type:String , required:true},
